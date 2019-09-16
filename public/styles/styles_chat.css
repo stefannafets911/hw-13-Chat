@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin-top: 1em;
+    overflow-y: scroll;
+    font-size: 20px;
+    color: #333333;
+    height: auto;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to right, rgba(60, 102, 97, 1) 0%, rgba(108, 137, 100, 1) 76%, rgba(156, 141, 94, 1) 100%);
+    /*box-shadow: inset 0px -20px 20px -14px #0000006e;*/
+}
+
+.wrapper {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    min-width: 600px;
+    align-items: center;
+}
+
+h1 {
+    color: #252e3e;
+}
+
+.user {
+    margin: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.users {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.users__buttons {
+    flex: 1;
+}
+users__button{
+    width: auto;
+    display: inline-block;
+}
+#usersTable, #chatTable{
+    flex: 3;
+}
+#chatTable{
+    display: none;
+}
+#chat {
+    width: 100%;
+}
+
+.chat__title {
+    text-align: center;
+    margin: 2px;
+    border: solid 1px transparent;
+    border-radius: 4px;
+    padding: 0.5em 0.5em;
+    color: #ffffff;
+    background-color: #252e3e;
+    font-size: 20px;
+    width: 100%;
+    min-width: 475px;
+    height: 2.3em;
+}
+
+.chat__body {
+    min-width: 475px;
+    background-color: #eee;
+    border: 1px solid #252e3e;
+    height: 600px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px;
+    overflow-y: auto;
+    box-shadow: inset 0px -2px 12px -8px black;
+}
+
+.outgoing{
+    margin: 5px;
+    padding: 5px;
+    word-break: break-all;
+    background-color: #a7dcff;
+    align-self: flex-end;
+    width: fit-content;
+    max-width: 75%;
+    border-radius: 10px 10px 4px 10px;
+    position: relative;
+    z-index: 1;
+}
+.outgoing:after{
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    left: auto;
+    right: -10px;
+    bottom: -10px;
+    border: 11px solid;
+    border-color: #a7dcff #e2000000 #5a5a5a00 #ffffff00;
+}
+.incoming {
+    margin: 5px;
+    padding: 5px;
+    word-break: break-all;
+    background-color: #ccd0d4;
+    align-self: flex-start;
+    width: fit-content;
+    max-width: 75%;
+    position: relative;
+    border-radius: 10px 10px 10px 4px;
+    z-index: 1;
+}
+.incoming:after{
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    left: -10px;
+    bottom: -10px;
+    border: 11px solid;
+    border-color: #ccd0d4 #e2000000 #5a5a5a00 #ffffff00;
+}
+.system-message {
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+    color: green;
+}
+
+.chat__footer {
+    display: flex;
+    height: 2.5em;
+    box-shadow: inset 0px -1px 12px -8px black;
+    align-items: center;
+}
+
+.chat__input {
+    width: 80%;
+    height: 2.5em;
+    padding: 0.4em;
+    margin-left: 1em;
+    border: solid 1px #252e3e;
+    border-radius: 4px;
+}
+
+#changeTable {
+    width: 80%;
+}
+
+#usersBtn,
+#chatBtn,
+#logoutBtn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px 0;
+    border: solid 1px transparent;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #252e3e;
+    border-color: #252e3e;
+    font-size: 20px;
+    width: 6em;
+    height: 2em;
+    cursor: pointer;
+}
+
+#sendBtn {
+    text-align: center;
+    margin: 2px;
+    border: solid 1px transparent;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #46a6ac;
+    border-color: #46a6ac;
+    font-size: 20px;
+    width: 15%;
+    height: 1.8em;
+    cursor: pointer;
+}
+
+#name,
+#email {
+    color: #252e3e;
+    font-weight: bold;
+}
+
+#table{
+    min-width: 100%;
+}
+
+.table__header {
+    background-color: #252e3e;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+}
+
+.table__body {
+    background-color: #eee;
+}
+
+td, th {
+    padding: 0.5em;
+}
+
+.users-chat {
+    color: #252e3e;
+    font-weight: bold;
+    padding-top: 2em;
+    font-size: 1em;
+    min-width: 150px;
+}
+
+li {
+    list-style-type: none;
+    line-height: 1%;
+}
+
+.users-chat li {
+    font-size: 0.8em;
+}
+

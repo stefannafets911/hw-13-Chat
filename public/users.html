@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles_chat.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="wrapper__header header">
+        <h1 class="header__title">Users</h1>
+    </div>
+    <div class="wrapper__user user">
+        <div class="user__data">
+            <div class="user__data name" id="name">Name:</div>
+            <div class="user__data email" id="email">Email:</div>
+        </div>
+        <div class="user__logout">
+            <button class="user__logout logout" id="logoutBtn">Log out</button>
+        </div>
+    </div>
+    <div class="wrapper__users users">
+        <div class="users__buttons">
+            <div class="users__button button-users">
+                <button class="button-users__btn" id="usersBtn">Users</button>
+            </div>
+            <div class="users__button button-chat">
+                <button class="button-chat__btn" id="chatBtn">Chat</button>
+            </div>
+            <div class="users__button users-chat" id="usersChat"></div>
+        </div>
+        <div class="users__change" id="usersTable"></div>
+        <div class="users__change" id="chatTable"></div>
+    </div>
+</div>
+</div>
+<script src="js/mainChat.js"></script>
+</body>
+</html>

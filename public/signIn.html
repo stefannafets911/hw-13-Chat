@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>SignIn</title>
+<link rel="stylesheet" href="styles/style_login.css">
+<body>
+<div class="wrapper-login">
+    <div class="container" id="container">
+        <div class="container__button" action="#">
+            <button class="button__log-in button" onclick="location.href='Index.html'">Log In</button>
+            <button class="button__sign-in button" onclick="location.href='./signIn.html'">Sign In</button>
+        </div>
+        <form id="signIn" class="form__sing-in" onsubmit="return false;">
+            <div class="form__sing-in sign-in">
+                <div class="sign-in__Name form_block">
+                    <label for="name" class="input-label">name</label>
+                    <input type="text" id="name" placeholder="Name" required>
+                </div>
+                <div class="sign-in__Email form_block">
+                    <label for="email" class="input-label">e-mail</label>
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="sign-in__password form_block">
+                    <label for="password" class="input-label">password</label>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="sign-in__confirmPassword form_block">
+                    <label for="confirm_password" class="input-label">confirm password</label>
+                    <input type="password" id="confirm_password" placeholder="Confirm Password" required>
+                </div>
+                <div class="form__buttonSubmit buttonSubmit">
+                    <button class="buttonSubmit__sign-in submit__button" id="submitBtnSignIn">Submit</button>
+                </div>
+                <div class="form__error" id="error"></div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="js/signIn_SignUp.js"></script>
+</body>
+</html>
