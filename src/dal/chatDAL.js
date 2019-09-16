@@ -43,6 +43,7 @@ ChatDAL.prototype.readPrivateMessages = async function (sender, receiver) {
     return await this.messagesDAO.readBySenderAndReceiver(sender, receiver);
 };
 ChatDAL.prototype.createMessage = async function (message) {
+    // console.log(message, 4);
     await this.messagesDAO.create(message);
 };
 ChatDAL.prototype.readAllUsers = async function () {

@@ -2,15 +2,14 @@ const DAO = require('./dao');
 const config = require('../../config');
 const mongoose = require('mongoose');
 const express = require('express');
-const MessageRoute = express.Router();
 const messageSchema = new mongoose.Schema({
-    message: {type: String, required: true},
-    sender: {type: String, required: true},
-    receiver: {type: String, required: true},
-    date: {type: Number, required: true},
-}, {
-    collection: 'messages'
-});
+        text: {type: String,required: true},
+        sender: {type: String, required: true},
+        receiver: {type: String, required: true},
+        time: {type: String, required: true},
+        type: {type: String, required: true},
+    },
+    {collection: 'messages'});
 
 function MessagesDaoMongoDB() {
     this.connection = null;
@@ -29,21 +28,25 @@ MessagesDaoMongoDB.prototype.initialize = function () {
         .then(connection => {
             this.connection = connection;
             this.model = connection.model('message', messageSchema);
+            console.log('Database messages is connected');
         })
         .catch((error) => {
-            console.log(error);
+            console.log('Can not connect to the database' + error);
         });
 };
 //
-// MessagesDaoMongoDB.prototype.create = async function (object) {
-//     const message = this.model(object);
-//     await message.save();
-//     console.log('saved', message);
-// };
-//
-// MessagesDaoMongoDB.prototype.readByReceiver = async function (receiver) {
-//     return await this.model.find({receiver});
-// };
+MessagesDaoMongoDB.prototype.create = async function (object) {
+    const message = this.model(object);
+    await message.save();
+};
+
+MessagesDaoMongoDB.prototype.readByReceiver = async function (ws) {
+    // return await this.model.find({receiver});
+    let validate = await this.model.find({receiver: 'all'});
+    validate.forEach(message => {
+        ws.send(JSON.stringify(message));
+    });
+};
 //
 // MessagesDaoMongoDB.prototype.readBySenderAndReceiver = async function (sender, receiver) {
 //     const sent = await this.model.find({sender, receiver});

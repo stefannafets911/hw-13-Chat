@@ -91,7 +91,6 @@ server.on('connection', ws => {
         text: 'Welcome!',
         time: new Date()
     }));
-
     //загрузка писем из бд
     chatDal.readPublicMessages(ws);
 

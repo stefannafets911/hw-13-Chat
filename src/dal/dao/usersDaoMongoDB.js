@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
     },
     {collection: 'users'});
 
+
 function UsersDaoMongoDB() {
     this.connection = null;
     this.model = null;
@@ -29,7 +30,7 @@ UsersDaoMongoDB.prototype.initialize = function () {
         .then(connection => {
             this.connection = connection;
             this.model = connection.model('user', userSchema);
-            console.log('Database is connected');
+            console.log('Database user is connected');
         })
         .catch((error) => {
             console.log('Can not connect to the database' + error);

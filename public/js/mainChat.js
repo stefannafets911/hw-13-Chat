@@ -187,6 +187,7 @@ class App {
                         user: store.user.name,
                         sender: store.user.name,
                         time: new Date(),
+                        receiver: 'all',
                     };
                     sendMessage(message);
                     document.getElementById('message').value = '';
