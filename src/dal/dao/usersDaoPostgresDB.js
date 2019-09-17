@@ -32,7 +32,7 @@ UsersDaoPostgresDB.prototype.create = async function (object) {
     if (validate.rows[0].count == 0){
         await this.pool.query(`INSERT INTO users (id, name, email, password) VALUES ('${uuidv1()}', '${object.name}', '${object.email}', '${object.password}')`);
     }else {
-        throw new Error('invalid email');
+
     }
 };
 
@@ -45,7 +45,7 @@ UsersDaoPostgresDB.prototype.readUser = async function (email, password) {
         User.email = email;
         return User;
     }else {
-        throw new Error('invalid user');
+
     }
 };
 

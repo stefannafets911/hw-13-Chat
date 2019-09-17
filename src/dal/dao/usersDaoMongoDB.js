@@ -48,7 +48,14 @@ UsersDaoMongoDB.prototype.readAll = async function () {
 };
 
 UsersDaoMongoDB.prototype.readUser = async function (email, password) {
-    return await this.model.findOne({email, password});
+    let user = await this.model.findOne({email, password});
+    if (user != null){
+        return user;
+    }else{
+        throw new Error('invalid user');
+    }
+    // console.log(user);
+    // return
 };
 
 UsersDaoMongoDB.prototype.readUserToId = async function (id) {
