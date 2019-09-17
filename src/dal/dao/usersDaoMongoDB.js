@@ -54,8 +54,6 @@ UsersDaoMongoDB.prototype.readUser = async function (email, password) {
     }else{
         throw new Error('invalid user');
     }
-    // console.log(user);
-    // return
 };
 
 UsersDaoMongoDB.prototype.readUserToId = async function (id) {

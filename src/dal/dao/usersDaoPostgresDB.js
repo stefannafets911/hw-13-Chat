@@ -45,7 +45,7 @@ UsersDaoPostgresDB.prototype.readUser = async function (email, password) {
         User.email = email;
         return User;
     }else {
-
+        throw new Error('invalid user');
     }
 };
 
